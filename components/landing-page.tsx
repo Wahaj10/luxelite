@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import {
   ChevronLeft,
   ChevronRight,
@@ -15,14 +16,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
   Sheet,
   SheetContent,
   SheetDescription,
@@ -31,7 +24,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import { Services } from "./Services.tsx";
+import { Services } from "./Services";
 
 export function LandingPageComponent() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -41,7 +34,7 @@ export function LandingPageComponent() {
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    const previous = scrollY.getPrevious();
+    const previous = scrollY.getPrevious() || 0;
     if (latest > previous && latest > 150) {
       setHidden(true);
     } else {
@@ -52,7 +45,7 @@ export function LandingPageComponent() {
   const testimonials = [
     {
       name: "John Doe",
-      text: "The ambient lights they installed in my car are amazing! It's like driving a spaceship now.",
+      text: "The ambient lights they installed in my car are amazing! It&apos;s like driving a spaceship now.",
     },
     {
       name: "Jane Smith",
@@ -60,7 +53,7 @@ export function LandingPageComponent() {
     },
     {
       name: "Mike Johnson",
-      text: "Absolutely love the customizable options. It's a whole new driving experience!",
+      text: "Absolutely love the customizable options. It&apos;s a whole new driving experience!",
     },
   ];
 
@@ -78,7 +71,7 @@ export function LandingPageComponent() {
       setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, []);
+  }, [testimonials.length]);
 
   useEffect(() => {
     setIsVisible(true);
@@ -90,8 +83,8 @@ export function LandingPageComponent() {
       }
     };
 
-    window.addEventListener("'scroll'", handleScroll);
-    return () => window.removeEventListener("'scroll'", handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -172,7 +165,7 @@ export function LandingPageComponent() {
         className="relative h-screen flex items-center justify-center overflow-hidden pt-16"
       >
         <div ref={parallaxRef} className="absolute inset-0 z-0">
-          <img
+          <Image
             src="/placeholder.svg?height=1080&width=1920"
             alt="Car interior with ambient lighting"
             className="w-full h-full object-cover"
@@ -181,9 +174,7 @@ export function LandingPageComponent() {
         <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
         <div
           className={`relative z-20 text-center text-white transition-all duration-1000 ${
-            isVisible
-              ? "'opacity-100 translate-y-0'"
-              : "'opacity-0 translate-y-10'"
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
           <h1 className="text-6xl font-bold mb-2">LuxeLite Auto</h1>
@@ -230,7 +221,7 @@ export function LandingPageComponent() {
                 key={item}
                 className="relative overflow-hidden rounded-lg shadow-lg group"
               >
-                <img
+                <Image
                   src={`/placeholder.svg?height=300&width=400`}
                   alt={`Car interior ${item}`}
                   className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
@@ -267,7 +258,7 @@ export function LandingPageComponent() {
             <div className="md:flex md:items-center md:justify-between">
               <div className="md:w-1/2 mb-6 md:mb-0">
                 <h4 className="text-xl font-semibold mb-4">
-                  Transform your car's ceiling into a starry night sky
+                  Transform your car&apos;s ceiling into a starry night sky
                 </h4>
                 <ul className="list-disc list-inside space-y-2">
                   <li>Fiber optic star ceiling installation</li>
@@ -278,7 +269,7 @@ export function LandingPageComponent() {
                 </ul>
               </div>
               <div className="md:w-1/2 md:pl-8">
-                <img
+                <Image
                   src="/placeholder.svg?height=300&width=400"
                   alt="Starlight roof example"
                   className="w-full h-64 object-cover rounded-lg shadow-lg"
@@ -354,7 +345,7 @@ export function LandingPageComponent() {
           <h2 className="text-3xl font-bold text-center mb-8">About Us</h2>
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="md:w-1/2">
-              <img
+              <Image
                 src="/placeholder.svg?height=400&width=600"
                 alt="Our team"
                 className="rounded-lg shadow-lg w-full h-auto"
@@ -373,9 +364,9 @@ export function LandingPageComponent() {
                 unique style and enhance their driving pleasure.
               </p>
               <p className="text-lg">
-                With a commitment to quality and innovation, we're dedicated to
-                illuminating the future of automotive interiors, one vehicle at
-                a time.
+                With a commitment to quality and innovation, we&apos;re
+                dedicated to illuminating the future of automotive interiors,
+                one vehicle at a time.
               </p>
             </div>
           </div>
