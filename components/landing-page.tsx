@@ -25,6 +25,7 @@ import {
 } from "@/components/ui/sheet";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { Services } from "./Services";
+import image1 from "./interior1.jpg";
 
 export function LandingPageComponent() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -166,14 +167,16 @@ export function LandingPageComponent() {
       >
         <div ref={parallaxRef} className="absolute inset-0 z-0">
           <Image
-            src="/placeholder.svg?height=1080&width=1920"
+            src={image1}
+            width="400"
+            height="300"
             alt="Car interior with ambient lighting"
             className="w-full h-full object-cover"
           />
         </div>
         <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
         <div
-          className={`relative z-20 text-center text-white transition-all duration-1000 ${
+          className={`relative z-20 backdrop-blur-[10px] w-[68%] pt-5 rounded-[25px] text-center text-white transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
@@ -183,9 +186,6 @@ export function LandingPageComponent() {
             Experience the future of car interiors with our custom ambient
             lighting solutions
           </h2>
-          <Button className="bg-blue-600 hover:bg-blue-700 text-white animate-pulse">
-            Get Started
-          </Button>
         </div>
         <div className="absolute inset-0 z-10 pointer-events-none">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 animate-gradient-x"></div>
@@ -222,7 +222,9 @@ export function LandingPageComponent() {
                 className="relative overflow-hidden rounded-lg shadow-lg group"
               >
                 <Image
-                  src={`/placeholder.svg?height=300&width=400`}
+                  width="400"
+                  height="300"
+                  src={`https://placehold.co/600x600.jpg?text=Image+1`}
                   alt={`Car interior ${item}`}
                   className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
                 />
@@ -270,7 +272,9 @@ export function LandingPageComponent() {
               </div>
               <div className="md:w-1/2 md:pl-8">
                 <Image
-                  src="/placeholder.svg?height=300&width=400"
+                  width="400"
+                  height="300"
+                  src="https://placehold.co/600x600.jpg?text=Image+1"
                   alt="Starlight roof example"
                   className="w-full h-64 object-cover rounded-lg shadow-lg"
                 />
@@ -346,7 +350,9 @@ export function LandingPageComponent() {
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="md:w-1/2">
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                width="400"
+                height="300"
+                src="https://placehold.co/600x600.jpg?text=Image+1"
                 alt="Our team"
                 className="rounded-lg shadow-lg w-full h-auto"
               />
