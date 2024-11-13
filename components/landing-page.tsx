@@ -26,6 +26,13 @@ import {
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { Services } from "./Services";
 import image1 from "./interior1.jpg";
+import ambient1 from "./ambient1.jpg";
+import ambient2 from "./ambient2.jpg";
+import ambient3 from "./ambient3.jpg";
+import ambient4 from "./ambient4.jpg";
+import ambient5 from "./ambient5.jpg";
+import ambient6 from "./ambient6.jpg";
+import celestial1 from "./celestial1.jpg";
 
 export function LandingPageComponent() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -46,7 +53,7 @@ export function LandingPageComponent() {
   const testimonials = [
     {
       name: "John Doe",
-      text: "The ambient lights they installed in my car are amazing! It&apos;s like driving a spaceship now.",
+      text: "The ambient lights they installed in my car are amazing! It's like driving a spaceship now.",
     },
     {
       name: "Jane Smith",
@@ -54,7 +61,7 @@ export function LandingPageComponent() {
     },
     {
       name: "Mike Johnson",
-      text: "Absolutely love the customizable options. It&apos;s a whole new driving experience!",
+      text: "Absolutely love the customizable options. It's a whole new driving experience!",
     },
   ];
 
@@ -168,15 +175,16 @@ export function LandingPageComponent() {
         <div ref={parallaxRef} className="absolute inset-0 z-0">
           <Image
             src={image1}
-            width="400"
-            height="300"
+            fill={true}
+            // width="400"
+            // height="300"
             alt="Car interior with ambient lighting"
             className="w-full h-full object-cover"
           />
         </div>
         <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
         <div
-          className={`relative z-20 backdrop-blur-[10px] w-[68%] pt-5 rounded-[25px] text-center text-white transition-all duration-1000 ${
+          className={`relative z-20  text-center text-white transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
@@ -216,25 +224,27 @@ export function LandingPageComponent() {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8">Our Portfolio</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3, 4, 5, 6].map((item) => (
-              <div
-                key={item}
-                className="relative overflow-hidden rounded-lg shadow-lg group"
-              >
-                <Image
-                  width="400"
-                  height="300"
-                  src={`https://placehold.co/600x600.jpg?text=Image+1`}
-                  alt={`Car interior ${item}`}
-                  className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <p className="text-white text-lg font-semibold">
-                    View Project
-                  </p>
+            {[ambient1, ambient2, ambient3, ambient4, ambient5, ambient6].map(
+              (item, i) => (
+                <div
+                  key={i}
+                  className="relative overflow-hidden rounded-lg shadow-lg group"
+                >
+                  <Image
+                    width="400"
+                    height="300"
+                    src={item}
+                    alt={`Car interior ${i}`}
+                    className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <p className="text-white text-lg font-semibold">
+                      View Project
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              )
+            )}
           </div>
         </div>
       </section>
@@ -274,7 +284,7 @@ export function LandingPageComponent() {
                 <Image
                   width="400"
                   height="300"
-                  src="https://placehold.co/600x600.jpg?text=Image+1"
+                  src={celestial1}
                   alt="Starlight roof example"
                   className="w-full h-64 object-cover rounded-lg shadow-lg"
                 />
@@ -411,8 +421,14 @@ export function LandingPageComponent() {
                     <span>+1 (555) 123-4567</span>
                   </div>
                   <div className="flex items-center">
-                    <MapPin className="h-5 w-5 mr-2 text-blue-600" />
-                    <span>123 Lighting Ave, Autoville, CA 90210</span>
+                    <MapPin className="h-5 w-5 mr-2 text-blue-600 self-baseline" />
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d40072.40740261715!2d-114.21793899109127!3d51.117214964704324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x537168db0f87d79f%3A0xdbb1babe4f909c7b!2s303%20Ranchridge%20Bay%20NW%2C%20Calgary%2C%20AB%20T3G%201V5!5e0!3m2!1sen!2sca!4v1731461022042!5m2!1sen!2sca"
+                      width={"80%"}
+                      // height="450"
+                      // style="border:0;"
+                      loading="lazy"
+                    ></iframe>
                   </div>
                 </div>
               </div>
