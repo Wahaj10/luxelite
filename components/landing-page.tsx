@@ -105,7 +105,7 @@ export function LandingPageComponent() {
         }}
         animate={hidden ? "hidden" : "visible"}
         transition={{ duration: 0.35, ease: "easeInOut" }}
-        className="fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-90 backdrop-blur-sm shadow-md"
+        className="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-90 backdrop-blur-sm shadow-md"
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
@@ -184,13 +184,12 @@ export function LandingPageComponent() {
         </div>
         <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
         <div
-          className={`relative z-20  text-center text-white transition-all duration-1000 ${
+          className={`relative z-20 bg-slate-400/[.17] backdrop-blur-[10px] w-[68%] pt-5 rounded-[25px] text-center text-white transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
           <h1 className="text-6xl font-bold mb-2">LuxeLite Auto</h1>
-          <p className="text-2xl font-light mb-6">Illuminate Your Ride</p>
-          <h2 className="text-3xl font-semibold mb-8">
+          <h2 className="text-3xl lg:px-16 md:px-8 mb-8">
             Experience the future of car interiors with our custom ambient
             lighting solutions
           </h2>
