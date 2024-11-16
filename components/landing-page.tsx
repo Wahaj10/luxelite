@@ -52,16 +52,24 @@ export function LandingPageComponent() {
 
   const testimonials = [
     {
-      name: "John Doe",
+      name: "Jaspreet Singh",
       text: "The ambient lights they installed in my car are amazing! It's like driving a spaceship now.",
     },
     {
-      name: "Jane Smith",
+      name: "Umar Syed",
       text: "Great service and high-quality products. My car interior looks stunning at night.",
     },
     {
-      name: "Mike Johnson",
+      name: "Jalen Holland",
       text: "Absolutely love the customizable options. It's a whole new driving experience!",
+    },
+    {
+      name: "Juan Serrano",
+      text: "They did an amazing job installing ambient lighting in my car, making it look and feel so much more luxurious. Their service was quick, professional, and absolutely worth it!",
+    },
+    {
+      name: "Emily Harper",
+      text: "I'm blown away by how quickly they installed the ambient lighting in my car—it looks incredible! They even delivered the car back to me on time, making the whole experience super convenient.",
     },
   ];
 

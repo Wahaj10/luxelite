@@ -11,41 +11,38 @@ import { Button } from "@/components/ui/button";
 export const Services = () => {
   const packages = [
     {
-      title: "Basic Ambience",
-      description: "Entry-level ambient lighting package",
+      title: "Ambient Essentials",
+      description: "Front End lighting package",
+      features: ["Dash Ambient Lighting", "Front Footwell Lights"],
+    },
+    {
+      title: "Radiant Package",
+      description: "Front End Plus Front Door Panels",
       features: [
-        "Single color LED strips",
-        "Door panel and footwell lighting",
-        "Basic controller",
+        "Dash Ambient Lighting",
+        "Front Door Light Strips",
+        "Front Footwell Lights",
       ],
     },
     {
-      title: "Pro Ambience",
-      description: "Advanced multi-color package",
+      title: "Radiant Plus",
+      description: "All Around Lighting Package",
       features: [
-        "RGB LED strips with color changing",
-        "Dashboard, door, and footwell lighting",
-        "Smartphone app control",
+        "Dash Ambient Lighting",
+        "All Door Light Strips",
+        "Front and Back Footwell Lights",
       ],
     },
     {
-      title: "Elite Ambience",
-      description: "Premium customizable lighting",
+      title: "Ultimate Atmosphere",
+      description: "All Around Lighting With Ad-ons",
       features: [
-        "Addressable RGB LED strips",
-        "Full interior coverage including trunk",
-        "Advanced patterns and animations",
-        "Voice control integration",
-      ],
-    },
-    {
-      title: "Luxury Ambience",
-      description: "Ultimate ambient experience",
-      features: [
-        "Premium fiber optic lighting",
-        "Custom-designed light sculptures",
-        "Integration with car's infotainment",
-        "Personalized lighting scenes",
+        "Dash Ambient Lighting",
+        "All Door Light Strips",
+        "All Door Speaker Lights",
+        "All Door Storage Lights",
+        "All Door Handle  Lights",
+        "Front and Back Footwell Lights",
       ],
     },
   ];
