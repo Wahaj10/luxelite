@@ -425,7 +425,7 @@ export function LandingPageComponent() {
                   </div>
                   <div className="flex items-center">
                     <Phone className="h-5 w-5 mr-2 text-blue-600" />
-                    <span>+1 (555) 123-4567</span>
+                    <span>+1 (403) 801-3348</span>
                   </div>
                   <div className="flex items-center">
                     <MapPin className="h-5 w-5 mr-2 text-blue-600 self-baseline" />
