@@ -283,8 +283,6 @@ export function LandingPageComponent() {
                   <li>Fiber optic star ceiling installation</li>
                   <li>Customizable constellations and patterns</li>
                   <li>Shooting star effects</li>
-                  <li>Dimmable and color-changing options</li>
-                  <li>Integrates with ambient lighting system</li>
                 </ul>
               </div>
               <div className="md:w-1/2 md:pl-8">
