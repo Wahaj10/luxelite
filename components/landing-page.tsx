@@ -130,7 +130,7 @@ export function LandingPageComponent() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                <Image src={logoTxt} alt="Logo" height="112" width="auto" />
+                <Image src={logoTxt} alt="Logo" height="112" width="202" />
               </motion.span>
             </motion.a>
             <nav className="hidden md:flex space-x-4">
