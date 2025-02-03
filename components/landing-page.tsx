@@ -26,14 +26,26 @@ import {
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { Services } from "./Services";
 // import image1 from "./interior1.jpg";
-import mainImg from "./mainImg.png";
+// import mainImg from "./mainImg.png";
 import logoTxt from "./logo-txt.png";
-import ambient1 from "./ambient1.jpg";
-import ambient2 from "./ambient2.jpg";
-import ambient3 from "./ambient3.jpg";
-import ambient4 from "./ambient4.jpg";
-import ambient5 from "./ambient5.jpg";
-import ambient6 from "./ambient6.jpg";
+// import insta1 from "./insta1.jpg";
+import insta2 from "./insta2.jpg";
+// import insta3 from "./insta3.jpg";
+// import insta4 from "./insta4.jpg";
+// import ambient1 from "./ambient1.jpg";
+// import ambient2 from "./ambient2.jpg";
+// import ambient3 from "./ambient3.jpg";
+// import ambient4 from "./ambient4.jpg";
+// import ambient5 from "./ambient5.jpg";
+// import ambient6 from "./ambient6.jpg";
+
+import insta3 from "./insta3.jpg";
+import insta4 from "./insta4.jpg";
+import insta5 from "./insta5.jpg";
+import insta6 from "./insta6.jpg";
+import insta7 from "./insta7.jpg";
+import insta8 from "./insta8.jpg";
+
 import celestial1 from "./celestial1.jpg";
 
 export function LandingPageComponent() {
@@ -184,7 +196,7 @@ export function LandingPageComponent() {
       >
         <div ref={parallaxRef} className="absolute inset-0 z-0">
           <Image
-            src={mainImg}
+            src={insta2}
             fill={true}
             // width="400"
             // height="300"
@@ -204,7 +216,7 @@ export function LandingPageComponent() {
             lighting solutions
           </h2>
         </div> */}
-        <div className="absolute inset-0 z-10 pointer-events-none">
+        {/* <div className="absolute inset-0 z-10 pointer-events-none">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 animate-gradient-x"></div>
           <div className="absolute inset-0 opacity-50">
             {[...Array(20)].map((_, i) => (
@@ -222,7 +234,7 @@ export function LandingPageComponent() {
               />
             ))}
           </div>
-        </div>
+        </div> */}
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
           <ChevronDown className="h-8 w-8 text-white" />
         </div>
@@ -233,27 +245,25 @@ export function LandingPageComponent() {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8">Our Portfolio</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[ambient1, ambient2, ambient3, ambient4, ambient5, ambient6].map(
-              (item, i) => (
-                <div
-                  key={i}
-                  className="relative overflow-hidden rounded-lg shadow-lg group"
-                >
-                  <Image
-                    width="400"
-                    height="300"
-                    src={item}
-                    alt={`Car interior ${i}`}
-                    className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <p className="text-white text-lg font-semibold">
-                      View Project
-                    </p>
-                  </div>
+            {[insta3, insta8, insta5, insta4, insta7, insta6].map((item, i) => (
+              <div
+                key={i}
+                className="relative overflow-hidden rounded-lg shadow-lg group"
+              >
+                <Image
+                  width="400"
+                  height="300"
+                  src={item}
+                  alt={`Car interior ${i}`}
+                  className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="text-white text-lg font-semibold">
+                    View Project
+                  </p>
                 </div>
-              )
-            )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
