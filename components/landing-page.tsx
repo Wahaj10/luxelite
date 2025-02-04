@@ -29,7 +29,7 @@ import { Services } from "./Services";
 // import mainImg from "./mainImg.png";
 import logoTxt from "./logo-txt.png";
 // import insta1 from "./insta1.jpg";
-import insta2 from "./insta2.jpg";
+// import insta2 from "./insta2.jpg";
 // import insta3 from "./insta3.jpg";
 // import insta4 from "./insta4.jpg";
 // import ambient1 from "./ambient1.jpg";
@@ -45,6 +45,7 @@ import insta5 from "./insta5.jpg";
 import insta6 from "./insta6.jpg";
 import insta7 from "./insta7.jpg";
 import insta8 from "./insta8.jpg";
+import insta9 from "./insta9.jpg";
 
 import celestial1 from "./celestial1.jpg";
 
@@ -194,14 +195,21 @@ export function LandingPageComponent() {
         id="home"
         className="relative h-screen flex items-center justify-center overflow-hidden pt-16"
       >
-        <div ref={parallaxRef} className="absolute inset-0 z-0">
+        <div
+          ref={parallaxRef}
+          className="absolute inset-0 z-0  lg:bottom-[-200px] contents"
+        >
           <Image
-            src={insta2}
+            className="align-middle z-20 ease-in"
+            src={logoTxt}
+            alt={"Animated logo"}
+          />
+
+          <Image
+            src={insta9} // mainImg
             fill={true}
-            // width="400"
-            // height="300"
             alt="Car interior with ambient lighting"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-bottom"
           />
         </div>
         {/* <div className="absolute inset-0 bg-black opacity-50 z-10"></div> */}
@@ -245,7 +253,7 @@ export function LandingPageComponent() {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8">Our Portfolio</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[insta3, insta8, insta5, insta4, insta7, insta6].map((item, i) => (
+            {[insta8, insta3, insta5, insta4, insta7, insta6].map((item, i) => (
               <div
                 key={i}
                 className="relative overflow-hidden rounded-lg shadow-lg group"
