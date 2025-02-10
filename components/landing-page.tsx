@@ -45,9 +45,15 @@ import insta5 from "./insta5.jpg";
 import insta6 from "./insta6.jpg";
 import insta7 from "./insta7.jpg";
 import insta8 from "./insta8.jpg";
-import insta9 from "./insta9.jpg";
+// import insta9 from "./insta9.jpg";
+import mainGif from "./main.gif";
 
 import celestial1 from "./celestial1.jpg";
+
+const animVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0 },
+};
 
 export function LandingPageComponent() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -174,14 +180,18 @@ export function LandingPageComponent() {
                   </SheetDescription>
                 </SheetHeader>
                 <nav className="flex flex-col space-y-4 mt-6">
-                  {navItems.map((item) => (
-                    <a
+                  {navItems.map((item, index) => (
+                    <motion.a
                       key={item.name}
                       href={item.href}
                       className="text-gray-600 hover:text-blue-600 transition-colors"
+                      initial="hidden"
+                      animate="visible"
+                      variants={animVariants}
+                      transition={{ delay: index * 0.1 }}
                     >
                       {item.name}
-                    </a>
+                    </motion.a>
                   ))}
                 </nav>
               </SheetContent>
@@ -193,24 +203,31 @@ export function LandingPageComponent() {
       {/* Main Section with Animation and Parallax */}
       <section
         id="home"
-        className="relative h-screen flex items-center justify-center overflow-hidden pt-16"
+        className="relative h-screen flex items-center justify-center overflow-hidden pt-16 bg-black"
       >
-        <div
-          ref={parallaxRef}
-          className="absolute inset-0 z-0  lg:bottom-[-200px] contents"
-        >
-          <Image
-            className="align-middle z-20 ease-in"
-            src={logoTxt}
-            alt={"Animated logo"}
-          />
+        <div ref={parallaxRef} className="absolute contents">
+          <div>
+            <Image
+              src={mainGif} // mainImg
+              fill={true}
+              alt="Car interior with ambient lighting"
+              className="w-full h-auto! ease-in  z-10 object-cover object-bottom lg:bottom-[-200px]!"
+            />
+          </div>
 
-          <Image
-            src={insta9} // mainImg
-            fill={true}
-            alt="Car interior with ambient lighting"
-            className="w-full h-full object-cover object-bottom"
-          />
+          <motion.div
+            className="z-20"
+            initial="hidden"
+            animate="visible"
+            variants={animVariants}
+            transition={{ duration: 0.5 }}
+          >
+            <Image
+              className="align-middle ease-in"
+              src={logoTxt}
+              alt={"Animated logo"}
+            />
+          </motion.div>
         </div>
         {/* <div className="absolute inset-0 bg-black opacity-50 z-10"></div> */}
         {/* <div
