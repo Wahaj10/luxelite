@@ -46,8 +46,8 @@ import insta6 from "./insta6.jpg";
 import insta7 from "./insta7.jpg";
 import insta8 from "./insta8.jpg";
 // import insta9 from "./insta9.jpg";
-import mainGif from "./main.gif";
-
+// import mainGif from "./main.gif";
+import mainVideo from "../public/assets/video.mp4";
 import celestial1 from "./celestial1.jpg";
 
 const animVariants = {
@@ -63,12 +63,8 @@ export function LandingPageComponent() {
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    const previous = scrollY.getPrevious() || 0;
-    if (latest > previous && latest > 150) {
-      setHidden(true);
-    } else {
-      setHidden(false);
-    }
+    const previous = scrollY.get();
+    setHidden(latest > previous);
   });
 
   const testimonials = [
@@ -206,17 +202,16 @@ export function LandingPageComponent() {
         className="relative h-screen flex items-center justify-center overflow-hidden pt-16 bg-black"
       >
         <div ref={parallaxRef} className="absolute contents">
-          <div>
-            <Image
-              src={mainGif} // mainImg
-              fill={true}
-              alt="Car interior with ambient lighting"
-              className="w-full h-auto! ease-in  z-10 object-cover object-bottom lg:bottom-[-200px]!"
-            />
-          </div>
+          <video
+            src={mainVideo}
+            autoPlay
+            loop
+            muted
+            className="w-full h-auto object-cover object-bottom lg:bottom-[-200px]"
+          />
 
           <motion.div
-            className="z-20"
+            className="z-20 absolute"
             initial="hidden"
             animate="visible"
             variants={animVariants}
@@ -229,37 +224,7 @@ export function LandingPageComponent() {
             />
           </motion.div>
         </div>
-        {/* <div className="absolute inset-0 bg-black opacity-50 z-10"></div> */}
-        {/* <div
-          className={`relative z-20 bg-slate-400/[.17] backdrop-blur-[10px] w-[68%] pt-5 rounded-[25px] text-center text-white transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
-        >
-          <h1 className="text-6xl font-bold mb-2">LuxeLite Auto</h1>
-          <h2 className="text-3xl lg:px-16 md:px-8 mb-8">
-            Experience the future of car interiors with our custom ambient
-            lighting solutions
-          </h2>
-        </div> */}
-        {/* <div className="absolute inset-0 z-10 pointer-events-none">
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 animate-gradient-x"></div>
-          <div className="absolute inset-0 opacity-50">
-            {[...Array(20)].map((_, i) => (
-              <div
-                key={i}
-                className="absolute rounded-full bg-white animate-float"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                  width: `${Math.random() * 4 + 1}px`,
-                  height: `${Math.random() * 4 + 1}px`,
-                  animationDuration: `${Math.random() * 3 + 2}s`,
-                  animationDelay: `${Math.random() * 2}s`,
-                }}
-              />
-            ))}
-          </div>
-        </div> */}
+
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
           <ChevronDown className="h-8 w-8 text-white" />
         </div>
