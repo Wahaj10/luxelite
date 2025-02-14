@@ -203,6 +203,7 @@ export function LandingPageComponent() {
       >
         <div ref={parallaxRef} className="absolute contents">
           <video
+            playsInline
             src={mainVideo}
             autoPlay
             loop
